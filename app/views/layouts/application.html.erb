@@ -12,7 +12,8 @@
 <div class='container'>
   <h1>Twitter</h1>
   <nav class='nav-format'>
-    <%= link_to 'USERS', new_user_path %>
+    <%= link_to 'HOME', root_path %>
+    <%= link_to "NEW TWEET FOR #{@default_user.profile_name}".upcase, new_user_tweet_path(@default_user) %>
   </nav>
 </div>
 

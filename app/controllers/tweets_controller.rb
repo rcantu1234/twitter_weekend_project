@@ -5,11 +5,14 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.all
+    @user = User.find(params[:user_id])
   end
 
   # GET /tweets/1
   # GET /tweets/1.json
   def show
+    @user = User.find(params[:user_id])
+  #  @tweets = Tweets.where(user_id: @user)
   end
 
   # GET /tweets/new
@@ -20,6 +23,8 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1/edit
   def edit
+    @user = User.find(params[:user_id])
+    # @tweet = Tweet.where(user_id: @user.id)
   end
 
   # POST /tweets
