@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :profile_name, :presence => true, :length => { :minimum => 2 }
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
 end

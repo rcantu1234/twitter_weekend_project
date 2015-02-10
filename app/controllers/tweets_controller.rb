@@ -14,7 +14,6 @@ class TweetsController < ApplicationController
   # GET /tweets/1.json
   def show
     @user = User.find(params[:user_id])
-  #  @tweets = Tweets.where(user_id: @user)
   end
 
   # GET /tweets/new

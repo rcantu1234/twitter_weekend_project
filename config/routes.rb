@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :tweets
   end
 
-get 'users/:id' => 'users#index'
+resources :devise
 
 root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.

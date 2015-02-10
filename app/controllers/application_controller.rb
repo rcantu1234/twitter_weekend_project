@@ -5,7 +5,15 @@ class ApplicationController < ActionController::Base
 
   before_action :set_first_user
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   def set_first_user
     @default_user = User.first
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up).push(:first_name)
   end
 end
